@@ -1,0 +1,100 @@
+<html>
+<head>
+<style>
+#rec_id2{
+    border-width: 1px;
+    border-style: solid;
+    width: 300px;
+    border-color: brown;
+}
+#btn_id1,#btn_id2{
+    width: 400px;
+    height: 150px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: blue;
+}
+.recFromBackend
+{
+    border-width: 1px;
+    border-style: solid;
+    width: 278px;
+    border-color: #372AA5;
+    margin: 10px;
+}
+.prdImg{
+    width: 200px;
+    height: 100px;
+}
+</style>
+<title>test page</title>
+<!--	<img src="http://icemdev.retchat.com/p/?a=9&catcv=feaa9671-6a53-4155-a3da-b1ac738d4337&cert=a7936e6b9ce649739c21e1f7b0096249"> -->
+<script id="ret-js-template" type="text/javascript">
+	var retUrlPrefix="http://www.retchat.com/tracking/";
+	var retCert="c93339e30fd01676f15a94ab4e0956fa";
+	var retSiteId=4;
+
+
+	//var itemOrder1={'id':'003', 'price':18.8, 'quantity':1};
+	//var itemOrder2={'id':'005', 'price':8.8, 'quantity':3};
+	//var itemOrder3={'id':'008', 'price':1.68, 'quantity':2};
+	//var retOrderList = [itemOrder1, itemOrder2, itemOrder3];
+    
+	var itemCart1={'id':'002', 'price':18.8, 'quantity':1};
+	var itemCart2={'id':'006', 'price':8.8, 'quantity':3};
+	var itemCart3={'id':'008', 'price':1.68, 'quantity':2};
+	var retCartList = [itemCart1, itemCart2, itemCart3];
+	
+	(function() {
+            var ret = document.createElement('script');
+            ret.type = 'text/javascript';
+            ret.async = true;
+            ret.src = retUrlPrefix + 'ret.js?' + (new Date().getDate()+'1');
+            var currentJs = document.getElementById('ret-js-template');
+            currentJs.parentNode.insertBefore(ret, currentJs);
+
+    })();
+</script>
+</head>
+<body>
+
+        <div>
+			<h3>192.168.1.5</h3> 
+			<h5>
+				Please check the value of cookie "__retuid". <br>
+				After surfing all the sites that embedded this js template, 
+				these cookies should be all the same value.
+			</h5>
+	</div>
+	<div  id="btn_id1">
+		<a href=''> hyper-link for label </a>
+		<a href=''><img class='prdImg' src='http://cf-attach.i-sogi.com/tw/product/img/Apple_apple_iphone_se_0321204421530_640x480.jpg'></a>
+	</div>
+	<br>
+	<div  id="btn_id2" >
+		<a href=''> hyper-link for label </a>
+		<a href=''><img class='prdImg' src='http://cf-attach.i-sogi.com/tw/product/img/Apple_apple_iphone_se_0321204421530_640x480.jpg'></a>
+	</div>
+
+	<br><br>
+	<div>
+		<h5>Recommendation results: </h5>
+		<div id='valentine-Items'> </div>
+	</div>
+	<div>
+		<a href='http://192.168.1.105/tracking/view-test.html?aaa' > <h5> in-site hyper link </h5>	</a>
+	</div>
+
+	<div>
+		<a href='http://192.168.1.105/tracking/view-test.html?prod=007&url0&url888'> hyper-link for 192.168.1.105 </a>
+		<br>
+		<a href='http://icem.retair.com/tracking/view-test.html?prod=007&url0&url888'> hyper-link for icem.retair.com </a>
+	</div>
+
+	<div>
+		<a href='http://icemdev.retchat.com/retclub/8/0/23/' > <h5> out-site hyper link </h5>	</a>
+	</div>
+	<div id="rank_dom1"> </div>
+	<textarea id='tt'> </textarea>
+</body>
+</html>

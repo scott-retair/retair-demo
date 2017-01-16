@@ -1,0 +1,164 @@
+﻿/* 
+Brought to you by Carlos Maldonado - @choquo 
+This script is open source
+License: MIT
+*/
+function validatrix(element, lang){    
+    //Messages
+    var warnings;
+    if (lang == "CHI") {
+        warnings = {
+            email: "請輸入有效的電郵",
+            text: '*必填',
+            textarea: '*必填',
+            select: '*必填',
+            radio: '*Select a radio option',
+            checkbox: '*必填',
+            passwordmatch: '2組密碼不相同'
+        };
+    }
+    else if (lang == "CHS") {
+        warnings = {
+            email: "请输入有效的电邮",
+            text: '*必填',
+            textarea: '*必填',
+            select: '*必填',
+            radio: '*Select a radio option',
+            checkbox: '*必填',
+            passwordmatch: '2组密码不相同'
+	    };
+	}
+    else if (lang == "ENG") {
+        warnings = {
+            email: "Please enter a valid email",
+            text: '*Field required',
+            textarea: '*Field required',
+            select: '*Field required',
+            radio: '*Select a radio option',
+            checkbox: '*Check one option',
+            passwordmatch: 'Password not match'
+        };
+    }
+	//Init
+	var validate = true;
+    //Remove old warnings	
+	$(".required-label").remove();
+	$("input").removeClass('required-ignore-multi');
+	element.find(".required").each(function() {
+        
+	    var myself = $(this);	    
+	    var myClass = $(this).attr("class").split(" ");
+	    
+	    var isEmail = false;
+	    if (myClass.length > 2 && myClass[2].toLowerCase() == 'email') {
+	        isEmail = true;
+	    }
+	    
+	    //text
+	    if (myself.prop("type").toLowerCase() === 'text' && myself.val() === '' && isEmail == false) {
+	        myself.after('<div class="required-label">' + warnings.text + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+	    else {
+	        if (myself.prop("type").toLowerCase() === 'text' && myself.val() === '' && isEmail == true || myself.prop("type").toLowerCase() === 'text' && isEmail == true && (myself.val().indexOf('@', 0) == -1 || myself.val().indexOf('.', 0) == -1)) {
+	            myself.after('<div class="required-label">' + warnings.email + '</div>').addClass('required-active');
+	            validate = false;
+	        }
+	    }
+
+	    //password
+	    if (myself.prop("type").toLowerCase() === 'password' && myself.val() === '') {
+	        myself.after('<div class="required-label">' + warnings.text + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+	    
+	    //number
+	    if (myself.prop("type").toLowerCase() === 'number' && myself.val() === '') {
+	        myself.after('<div class="required-label">' + warnings.text + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+
+	    //email
+	    if (
+			myself.prop("type").toLowerCase() === 'email' && myself.val() === '' ||
+			myself.prop("type").toLowerCase() === 'email' && (myself.val().indexOf('@', 0) == -1 || myself.val().indexOf('.', 0) == -1)
+		) {
+	        myself.after('<div class="required-label">' + warnings.email + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+
+	    //textarea
+	    if (myself.prop("type").toLowerCase() === 'textarea' && myself.val() === '') {
+	        myself.after('<div class="required-label">' + warnings.textarea + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+
+	    //select return (select-one or select-multiple)
+	    if (myself.prop("type").toLowerCase() === 'select-one' && $(myself, "option:selected").val() === '') {
+	        myself.after('<div class="required-label">' + warnings.select + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+
+	    //select return (select-one or select-multiple)
+	    if (myself.prop("type").toLowerCase() === 'select-multiple' && $(myself, "option:selected").val() === '') {
+	        myself.after('<div class="required-label">' + warnings.select + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+
+	    //radio
+	    if (myself.prop("type").toLowerCase() === 'radio') {
+	        //find radio family
+	        var radio_family_name = $(myself).attr('name');
+	        //Format as: <label> <input> label_string </label> [INSERT WARNING HERE]
+	        if ($("input[name=" + radio_family_name + "]").is(":checked")) {
+
+	        } else {
+	            if ($("input[name=" + radio_family_name + "]").hasClass("required-ignore-multi")) { } else {
+	                $("input[name=" + radio_family_name + "]").last().parent().after('<div class="required-label">' + warnings.radio + '</div>');
+	                $("input[name=" + radio_family_name + "]").addClass("required-ignore-multi");
+	            }
+	            validate = false;
+	        }
+	    }
+
+	    //checkbox
+	    if (myself.prop("type").toLowerCase() === 'checkbox') {
+	        //find radio family
+	        var checkbox_family_name = $(myself).attr('name');
+	        //Format as: <label> <input> label_string </label> [INSERT WARNING HERE]
+	        if ($("input[name=" + checkbox_family_name + "]").is(":checked")) {
+
+	        } else {
+	            if ($("input[name=" + checkbox_family_name + "]").hasClass("required-ignore-multi")) { } else {
+	                $("input[name=" + checkbox_family_name + "]").last().parent().after('<div class="required-label">' + warnings.checkbox + '</div>');
+	                $("input[name=" + checkbox_family_name + "]").addClass("required-ignore-multi");
+	            }
+	            validate = false;
+	        }
+	    }
+
+	});
+	if (validate) {
+	    if ($('.npassword').val() != $('.cpassword').val()) {
+	        $('.cpassword').after('<div class="required-label">' + warnings.passwordmatch + '</div>').addClass('required-active');
+	        validate = false;
+	    }
+	    else {
+	        validate = true;
+	    }
+	}
+	
+	if( validate ){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+$(function(){
+	//Remove warnings on focus or click
+	$(".required").on("focus click",function(){ $(this).removeClass('required-active'); $(this).next().remove(); });
+	$("input[type=radio].required, input[type=checkbox].required").on("focus click", function(){ 
+		$(this).parent().parent().find('.required-label').remove();
+	});
+});

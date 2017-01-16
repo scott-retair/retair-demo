@@ -1,0 +1,81 @@
+﻿function ShowDiv(control_id) {
+    document.getElementById(control_id).style["display"] = "";
+}
+
+function HideDiv(control_id) {
+    document.getElementById(control_id).style["display"] = "none";
+}
+
+function ShowHideDiv(control_id) {
+    if (document.getElementById(control_id).style["display"] == "none")
+        document.getElementById(control_id).style["display"] = "";
+    else
+        document.getElementById(control_id).style["display"] = "none";
+}
+
+function showBg() {
+    if (!document.getElementById("fullbg")) {
+        $("body").append("<div id=\"fullbg\"></div>");
+    }
+    var bh = $("body").height();
+    var bw = $("body").width();
+    $("#fullbg").css({
+        height: bh,
+        width: bw,
+        display: "block"
+    });
+}
+
+//关闭灰色 jQuery 遮罩
+
+function closeBg() {
+    $("#fullbg").hide();
+}/*绑定产品列表中加入清单*/
+$(function () {
+    try { $(".addtolistBtn").click(addRefer); }
+    catch (Error) { }
+});
+
+var addRefer = function () {
+    var action;
+    var arr = this.id.split("_");
+    if (arr[0] == "AR") {
+        action = "AddToRef";
+    }
+    else if (arr[0] == "AF") {
+        action = "AddToRefFriend";
+    }
+    else if (arr[0] == "ATL") {
+
+        if (UserInfo.LoginID == "") {
+            //先登陆
+            window.scrollTo(0, 0);
+            ChangeLang('show', 'divLoginContent1main');
+            return false;
+        }
+        action = "AddToWL";
+    }
+    var url = "/AjaxPro/ajax.aspx?action=" + action + "&mountNo=" + arr[1];
+
+    $(this).parent().append("<span class=\"Loading\"><img src=\"/images/icon/loading.gif\"/></span>");
+
+    $.get(url, null, function (r) {
+        if (r.result == "ok") {
+            alert(r.msg);
+            ShareToCustomersList();
+        }
+        else {
+            alert("Error!");
+        }
+        $(".Loading").hide();
+    }, 'json');
+};
+
+function ShareToCustomersList() {
+    if (document.getElementById("ShareToCustomers_List")) {
+        $(".sharetocustomers").show();
+        $.get("/AjaxPro/ajax.aspx?action=ShareToCustomersList", function (data) {
+            $("#ShareToCustomers_List").html(data);
+        });
+    }
+}

@@ -1,0 +1,26 @@
+
+cp product-detail-MaBelle.html product-detail-MaBelle-001.html
+cp product-detail-MaBelle.html product-detail-MaBelle-002.html
+cp product-detail-MaBelle.html product-detail-MaBelle-003.html
+cp product-detail-MaBelle.html product-detail-MaBelle-004.html
+cp product-detail-MaBelle.html product-detail-MaBelle-005.html
+cp product-detail-MaBelle.html product-detail-MaBelle-006.html
+cp product-detail-MaBelle.html product-detail-MaBelle-007.html
+cp product-detail-MaBelle.html product-detail-MaBelle-008.html
+cp product-detail-MaBelle.html product-detail-MaBelle-009.html
+cp product-detail-MaBelle.html product-detail-MaBelle-010.html
+cp product-detail-MaBelle.html product-detail-MaBelle-011.html
+cp product-detail-MaBelle.html product-detail-MaBelle-012.html
+cp product-detail-MaBelle.html product-detail-MaBelle-013.html
+cp product-detail-MaBelle.html product-detail-MaBelle-014.html
+cp product-detail-MaBelle.html product-detail-MaBelle-015.html
+cp product-detail-MaBelle.html product-detail-MaBelle-016.html
+cp product-detail-MaBelle.html product-detail-MaBelle-017.html
+cp product-detail-MaBelle.html product-detail-MaBelle-018.html
+cp product-detail-MaBelle.html product-detail-MaBelle-019.html
+cp product-detail-MaBelle.html product-detail-MaBelle-020.html
+cp product-detail-MaBelle.html product-detail-MaBelle-021.html
+cp product-detail-MaBelle.html product-detail-MaBelle-022.html
+cp product-detail-MaBelle.html product-detail-MaBelle-023.html
+cp product-detail-MaBelle.html product-detail-MaBelle-024.html
+cp product-detail-MaBelle.html product-detail-MaBelle-025.html

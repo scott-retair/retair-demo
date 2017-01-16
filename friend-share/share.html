@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.retchat.com/retclub/4/0/28/ -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta name="viewport" content="width=640, target-densitydpi=320, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="./share_files/app.css">
+	<title>share</title>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<style>
+		.form-container {
+			background: #ffffff;
+			background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+			background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+			background: -moz-linear-gradient(top, #ffffff, #ffffff);
+			background: -ms-linear-gradient(top, #ffffff, #ffffff);
+			background: -o-linear-gradient(top, #ffffff, #ffffff);
+			background-image: -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			font-family: 'Helvetica Neue', Helvetica, sans-serif;
+			text-decoration: none;
+			vertical-align: middle;
+			min-width: 400px;
+			width: 100%;
+			background: url('images/theme.png') repeat;
+		}
+		
+		.form-field {
+			border: 1px solid #c9b7a2;
+			background: #F2F2F2;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			color: #c9b7a2;
+			-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 0px 0px;
+			-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 0px 0px;
+			box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(000, 000, 000, 0.7) 0 0px 0px;
+			padding: 12px;
+			margin-bottom: 20px;
+			font-size: 30px;
+			width: 95%;
+		}
+		
+		.form-field:focus {
+			background: #fff;
+			color: #725129;
+		}
+		
+		.form-container h2 {
+			text-shadow: #e6cfb3 0 1px 0;
+			font-size: 36px;
+			margin: 0 0 10px 0;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		.form-title {
+			margin-bottom: 10px;
+			color: #5c4225;
+			text-shadow: #e6cfb3 0 1px 0;
+			font-size: 36px;
+				 padding-left: 10px;
+		}
+		
+		.submit-container {
+			margin: 8px 0;
+			text-align: center;
+		}
+		
+		.submit-button {
+			border: 1px solid #5c4225;
+			background: #5cb85c;
+			background: -webkit-gradient(linear, left top, left bottom, from(#5cb85c), to(#5cb85c));
+			background: -webkit-linear-gradient(top, #5cb85c, #5cb85c);
+			background: -moz-linear-gradient(top, #5cb85c, #5cb85c);
+			background: -ms-linear-gradient(top, #5cb85c, #5cb85c);
+			background: -o-linear-gradient(top, #5cb85c, #5cb85c);
+			background-image: -ms-linear-gradient(top, #5cb85c 0%, #5cb85c 100%);
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			color: #FFFFFF;
+			font-family: helvetica, serif;
+			padding: 8.5px 18px;
+			font-size: 36px;
+			text-decoration: none;
+			vertical-align: middle;
+			width: 80%;
+			height:60px;
+		}
+		
+		.submit-button:hover {
+			border: 1px solid #334a1b;
+			text-shadow: #548520 0 1px 0;
+			background: #6aa436;
+			background: -webkit-gradient(linear, left top, left bottom, from(#8dc059), to(#6aa436));
+			background: -webkit-linear-gradient(top, #8dc059, #6aa436);
+			background: -moz-linear-gradient(top, #8dc059, #6aa436);
+			background: -ms-linear-gradient(top, #8dc059, #6aa436);
+			background: -o-linear-gradient(top, #8dc059, #6aa436);
+			background-image: -ms-linear-gradient(top, #8dc059 0%, #6aa436 100%);
+			color: #fff;
+		}
+		
+		.cancel-button {
+			border: 1px solid #5c4225;
+			background: #5bc0de;
+			background: -webkit-gradient(linear, left top, left bottom, from(#5bc0de), to(#5bc0de));
+			background: -webkit-linear-gradient(top, #5bc0de, #5bc0de);
+			background: -moz-linear-gradient(top, #5bc0de, #5bc0de);
+			background: -ms-linear-gradient(top, #5bc0de, #5bc0de);
+			background: -o-linear-gradient(top, #5bc0de, #5bc0de);
+			background-image: -ms-linear-gradient(top, #5bc0de 0%, #5bc0de 100%);
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			-webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			-moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+			color: #FFFFFF;
+			font-family: helvetica, serif;
+			padding: 8.5px 18px;
+			font-size: 36px;
+			text-decoration: none;
+			vertical-align: middle;
+			width: 80%;
+			height:60px;
+		}
+		
+		.submit-button:active {
+			text-shadow: #31540c 0 1px 0;
+			border: 1px solid #447314;
+			background: #8dc059;
+			background: -webkit-gradient(linear, left top, left bottom, from(#6aa436), to(#6aa436));
+			background: -webkit-linear-gradient(top, #6aa436, #8dc059);
+			background: -moz-linear-gradient(top, #6aa436, #8dc059);
+			background: -ms-linear-gradient(top, #6aa436, #8dc059);
+			background: -o-linear-gradient(top, #6aa436, #8dc059);
+			background-image: -ms-linear-gradient(top, #6aa436 0%, #8dc059 100%);
+			color: #fff;
+		}
+		
+		.iheader {
+			 border-bottom: 2px groove #b1b0b1;
+			 height:70px;
+			 text-align:center;
+		}
+		
+		.formAnswerText{
+			width: 600px;
+			height: 100px;
+		}
+			
+		@media screen and (max-width: 400px)
+		{
+			.formAnswerText{
+				width: 500px;
+				height: 90px;
+			}
+		}
+
+	</style>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body class="">
+
+	<div class="wrapper">
+		<div id="iheader" class="iheader" style="background: url(&#39;images/banner.png&#39;) repeat;">
+			<img id="logoImg" src="./share_files/logo-1484642049935.PNG" style="max-width:100%;height:100%;background-color: #ffffff;">
+		</div>
+		<form class="form-container" id="form">
+			<div class="form-title">
+				<h2 id="formTitle">share</h2>
+				<h3 id="formTitle"> Please fill the questionnaire </h3>
+			</div>
+			<!--
+			<input type="hidden" name="clubId" id="clubId" value="" />
+			<input type="hidden" name="memberId" id="memberId" value="" />
+			
+			<div class="form-title" id="nameLabel"></div>
+			<input class="form-field" type="text" name="name" id="name" data-i18n="[placeholder]checkout.member.name" maxlength="30" />
+			<br />
+			
+			<div class="form-title" id="phoneLabel"></div>
+			<input class="form-field" type="text" name="phone" id="phone" data-i18n="[placeholder]checkout.member.phone" maxlength="20" />
+			<br />
+			
+			<div class="form-title" id="emailLabel"></div>
+			<input class="form-field" type="text" name="email" id="email" data-i18n="[placeholder]checkout.member.email" maxlength="50" />
+			<br />-->
+			
+			
+			<div id="dynamicFields">
+			
+			
+			</div>
+			<!--
+			<div class="form-title" id="genderLabel"></div>
+			<div class="form-title" style="-webkit-column-count: 3;-moz-column-count: 3; column-count: 3;">
+				<div>
+					<input type="radio" name="gender" id="genderMale" value="M" style="width:30px !important;height:30px!important;" checked>
+					<label for="genderMale"></label>
+				</div>
+				<div>
+					<input type="radio" name="gender" id="genderFemale" value="F" style="width:30px !important;height:30px!important;">
+					<label for="genderFemale"></label>
+				</div>
+			</div>
+			
+			<input class="form-field" type="hidden" name="wechatId" id="wechatId" />-->
+			
+			<div class="submit-container">
+				<input class="submit-button" type="button" id="submitButton" value="SUBMIT">
+			</div>
+			<!--
+			<div class="submit-container">
+				<input class="cancel-button" type="button" id="cancelButton" />
+			</div>								 			
+			-->
+		</form>
+	</div>
+	
+	<!-- <script type="text/javascript" src="//www.retchat.com/RETchat.js?v=3"></script> -->
+	<script type="text/javascript" src="js/i18next-1.7.4.min.js"></script>
+	<script type="text/javascript" src="js/i18nSetting.js"></script>
+	<script type="text/javascript" async src="http://www.retchat.com/tracking/ret.js?17"></script><script id="ret-js-template" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		var retUrlPrefix="http://www.retchat.com/tracking/";
+		var retSiteId = 4;
+		var retCert = "c93339e30fd01676f15a94ab4e0956fa";
+		var clubId = "28";
+		var formId = "1";
+		var memAttributeStr = "[]";		// example "[39,40]";
+		var shouldLoginRetclubFirst = false;
+		var inRegisterPage = true;
+		
+		
+		(function() {
+			var ret = document.createElement('script');
+			ret.type = 'text/javascript';
+			ret.async = true;
+			ret.src = retUrlPrefix + 'ret.js?' + (new Date().getDate());
+			var currentJs = document.getElementById('ret-js-template');
+			currentJs.parentNode.insertBefore(ret, currentJs);
+		})();
+		
+		var getCookie = function(name){
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for ( var i = 0, limit = ca.length; i < limit; i++) {
+				var c = ca[i];
+				c = c.trim();
+				if (c.indexOf(nameEQ) == 0){
+					return c.substring(nameEQ.length);
+				}
+			}
+			return '';
+		};
+		
+		var extractRootUrl = function (url) {
+			var rootUrl
+			var domain;
+			var matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);		
+			rootUrl = matches && matches[0];
+			domain = matches && matches[1];
+			return rootUrl;
+		};
+		
+		
+		var formAnwserFields = [];	// used for submitting form answer
+		var memberAttributeFields = [];		// used for submitting member attribute
+		
+		var retchatAccount = "mabelle_account";
+		var appid = "mabelle-demo-app-id";
+
+		var isLogin = getCookie( "isLogin" + retchatAccount );
+		var mid = getCookie(retchatAccount);
+		
+		var userId = null;
+		var memberVO = null;
+		var urlMember = extractRootUrl( retUrlPrefix ) + "agent/wechat/getRetclubMemberInfo?siteId=" + retSiteId + "&accountName=";
+		var urlForm = extractRootUrl( retUrlPrefix ) + "agent/form/getFormByFormId/" + formId;
+		
+		var HAS_TRY_TO_GET_BACKEND_MID_COOKIE = "hasTryToGetBackendMid";
+		var tryGetBackendMid = getCookie( HAS_TRY_TO_GET_BACKEND_MID_COOKIE );
+		
+		var COOKIE_ALREADY_SUBMIT = "hasSubmit";
+		var alreadySubmit = getCookie( COOKIE_ALREADY_SUBMIT );
+		
+		var memAttributeIds = [];
+		if( memAttributeStr.length > 0 ){
+			memAttributeIds = memAttributeStr.replace( /(^.*\[|\].*$)/g, '' ).split(',');
+		}
+		
+		$(function() {
+			
+			$("#submitButton").val( "SUBMIT" );
+			
+			$("#submitButton").on('click', function(e) {
+				submitFormAnwser();
+				submitMemberAttribute();
+			});
+			$("#formTitle").text('share');
+			$("#cancelButton").val(i18n.t('register.complete.cancel'));
+			
+			
+			if($('#logoImg').attr('src') == ''){
+				$('#iheader').hide();
+			}
+			
+			// load form and then load member custom attributes 
+			loadForm( formAnwserFields );
+			
+		});
+		
+		function loadForm( formAnwserFields ){
+			$.getJSON( urlForm , function( response ) {
+				var fields = [];
+				var formVO = response.data;
+				$.each( formVO.formTopicVOs, function( i, val ) {
+					fields.push( "<div class='form-title' id='" + "formTopic"+val.id + "'>" + val.topic + "</div>" );	// display formTopic
+					
+					fields.push( "<div class='form-title' id='" + "formTopic_"+val.id + "' style='-webkit-column-count: 2;-moz-column-count: 2; column-count: 2;'>" ); // display formAnswer
+					if( val.type == "PLAIN_TEXT"){
+						var formAnwser = val.formAnwsers[0];
+						fields.push( "<div>" );
+						fields.push( "<textarea class='formAnswerText' id='"+ "formAnswer_"+formAnwser.id + "' >" + "</textarea>");
+						fields.push( "</div>" );
+					}
+					else if( val.type == "OPTION" ) {
+						var radioName = "formTopic" + val.id;
+						$.each( val.formAnwsers, function(i, val) {
+							fields.push( "<div>" );
+							fields.push( "<input type='radio' name='" + radioName + "' id='"+ "formAnswer_"+val.id +"' value='" + val.anwser + "' style='width:30px !important;height:30px!important;' >");
+							fields.push( "<label for='" + val.anwser + "'>" + val.anwser + "</label>" );
+							fields.push( "</div>" );
+						});
+					}
+					
+					fields.push( "</div>" );
+					formAnwserFields.push(val);	// prepare for submit
+				});
+				
+				$('#dynamicFields').append(fields.join(""));
+				
+				// load member custom attributes 
+				loadMemberAttributes( memberAttributeFields );
+			});
+		}
+		
+		function loadMemberAttributes( memberAttributeFields ){
+			$.getJSON( extractRootUrl(retUrlPrefix) + "agent/wechat/site/getCustomAttributes?siteId=" + retSiteId , function( response ) {
+				var fields = [];
+				$.each( response.data, function( i, val ) {
+					if( memAttributeIds.indexOf( val.attributeId.toString() ) >= 0){	// the member attributes that going to decide by end users
+						/* 
+						example for showing formTopic and formAnswer
+						<div class="form-title" id="genderLabel"></div>
+						<div class="form-title" style="-webkit-column-count: 3;-moz-column-count: 3; column-count: 3;">
+							<div>
+								<input type="radio" name="gender" id="genderMale" value="M" style="width:30px !important;height:30px!important;" checked>
+								<label for="genderMale"></label>
+							</div>
+							<div>
+								<input type="radio" name="gender" id="genderFemale" value="F" style="width:30px !important;height:30px!important;">
+								<label for="genderFemale"></label>
+							</div>
+						</div>
+						*/
+						
+						var attributeName = val.name;
+						fields.push( "<div class='form-title' id='" + "memAttribute_"+val.attributeId + "'>" + attributeName + "</div>" );	// display member attribute name
+						
+						fields.push( "<div class='form-title' id='" + val.attributeId + "' style='-webkit-column-count: 2;-moz-column-count: 2; column-count: 2;'>" ); // display member attribute options
+						$.each( val.valueOptions, function(i, val) {
+							fields.push( "<div>" );
+							fields.push( "<input type='radio' name='" + attributeName + "' id='"+ "option_"+val.valueOptionId +"' value='" + val.optionName + "' style='width:30px !important;height:30px!important;' >");
+							fields.push( "<label for='" + val.optionName + "'>" + val.optionName + "</label>" );
+							fields.push( "</div>" );
+						});
+						fields.push( "</div>" );
+						
+						memberAttributeFields.push(val);	// prepare for submit
+					} 
+					
+				});
+				
+				$('#dynamicFields').append(fields.join(""));
+				
+				loadMemberInfo();
+			});
+		}
+	
+		function loadMemberInfo(){
+			if( typeof(mid) == "undefined" || mid.length == 0 )
+				return;
+			
+			jQuery.ajax({
+				url: urlMember + mid,
+				async: false,
+				success: function (resp) {
+					if( resp.data == null )
+						return;
+					
+					memberVO = resp.data;
+					userId = resp.data.memberId;
+					
+					if( userId == null )
+						window.location = "register.html?clubId=" + clubId + "&memberId=" + mid;
+				}
+			});
+		}
+		
+		
+		function submitFormAnwser(){
+			var reqFormMemberAnswers = [];
+			
+			$.each( formAnwserFields, function(i, val) {
+				var formTopicId = val.id;
+				if( val.type == "PLAIN_TEXT"){
+					/*	{
+							"formAnwserVO": {
+								"anwser": "PLAIN_TEXT ans1 for topic1",
+								"id": 14,	// 表示建立问卷时有一个选项id:14，user选了它
+								"point": 10
+							},
+							"id": 0,	// id:0 表示user 第一次填写了这个选项
+							"textAnswer": "user anwser for plain text"
+						}
+					*/
+					var domTextArea = $( "#" + "formTopic_"+formTopicId+ " > div > textarea" )[0] ;
+					var formAnswerId = domTextArea.id.substring("formAnswer_".length);
+					var formAnwserVO = {"anwser":'', "id": formAnswerId};
+					var formMemberAnwser = { "formAnwserVO": formAnwserVO, "id":0, "textAnswer":$(domTextArea).val() };
+					reqFormMemberAnswers.push( formMemberAnwser );
+				}
+				else if( val.type == "OPTION" ) {
+					$.each( $( "#" + "formTopic_"+formTopicId+ " > div > input" ) , function(i, val){
+						if( val.checked ){
+							/*	{	"formAnwserVO": {
+										"anwser": "option3 for topic2",
+										"id": 17,	// 表示建立问卷时有一个选项id:17，user选了它
+										"point": 3
+									},
+									"id": 0
+								}	
+							*/
+							var formAnswerId = val.id.substring( "formAnswer_".length );
+							var formAnwserVO = {"anwser":val.value, "id": formAnswerId};
+							var formMemberAnwser = { "formAnwserVO": formAnwserVO, "id":0 };
+							
+							reqFormMemberAnswers.push( formMemberAnwser );
+						}
+					});
+				}
+			});
+			
+			var ReqFormMemberAnwserDetail = {	"formId": formId,	"memberId":userId, "reqFormMemberAnswers":reqFormMemberAnswers	};
+			var submitUrl = extractRootUrl(retUrlPrefix) + 'agent/form/saveFormMemberAnwser/' + retSiteId;
+			$.ajax({
+				url: submitUrl,
+				headers: {
+					"Access-Control-Allow-Origin":"*",
+					'Content-Type':'application/json'
+				},
+				method: 'POST',
+				dataType: 'json',
+				data: JSON.stringify( ReqFormMemberAnwserDetail ),
+				success: function(response){
+					console.log( response );
+				}
+			});
+		}
+		
+		function submitMemberAttribute() {
+			
+			var qAttributes = [];
+			$.each( memberAttributeFields, function(i, val) {
+				var customAttributeId = val.attributeId;
+				$.each( $( "#" + val.attributeId + " > div > input" ) , function(i, val){
+					if( val.checked ){
+						/*{
+							"customAttributeId":65,
+							"valueOptionId":11,
+							"attributeValue":null
+						}*/
+						var valueOptionId = val.id.substring( "option_".length );
+						var attribute = {"customAttributeId": customAttributeId, "valueOptionId": valueOptionId, "attributeValue": null};
+						qAttributes.push(attribute);
+						return false;	// means 'continue'
+					}
+				});
+				
+			});
+
+			if( memberVO.customerValues == null )
+				memberVO.customerValues = [];
+			
+			var oldAttributes = memberVO.customerValues;
+			var newAttributes = [];
+			$.each( oldAttributes, function(i, val){
+				var customAttributeId = val.customAttributeId;
+				var existInQAttributes = false;
+				
+				for( var i=0 ; i<qAttributes.length ; i++ ){
+					if( qAttributes[i].customAttributeId == customAttributeId){
+						existInQAttributes = true;
+						break;
+					}
+				}
+				
+				if( !existInQAttributes )
+					newAttributes.push( val );
+			});
+			
+			$.each( qAttributes, function(i, val){
+				newAttributes.push( val );
+			});
+			memberVO.customerValues = newAttributes;
+
+			var submitUrl = extractRootUrl(retUrlPrefix) + 'agent/wechat/member/saveCustomAttribute?siteId=' + retSiteId;
+			
+			
+			$.ajax({
+				url: submitUrl,
+				headers: {
+					"Access-Control-Allow-Origin":"*",
+					'Content-Type':'application/json'
+				},
+				method: 'POST',
+				dataType: 'json',
+				data: JSON.stringify( memberVO ),
+				success: function(response){
+					if( alreadySubmit == "1" )
+						alert( "已经寫過问卷了" );
+					else{
+						RET.cookieObj.setLocalCookie( COOKIE_ALREADY_SUBMIT, "1", 365 );
+						alert( "问卷已经送出" );
+						
+					}
+				}
+			});
+		}
+
+	</script>
+
+
+</body></html>

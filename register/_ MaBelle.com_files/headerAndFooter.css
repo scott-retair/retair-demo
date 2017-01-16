@@ -1,0 +1,154 @@
+body{font-family: 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';}
+.btnMenu,.btnBuy,.btnLoc{display:inline-block;width:35px;height:35px;background-size:32px;margin-right: 4px;}
+.btnMenu{background:url(/images/icon/icon-menu.svg) no-repeat center center;margin-left: 5px;}
+.btnBuy{ background:url(/images/icon/icon-shopping-cart.svg) no-repeat center center; }
+.btnLoc{background:url(/images/icon/icon-pin.svg) no-repeat center center;}
+.bntCartItem{color: #fff; top:-22px; left:7px; position:relative; z-index: 10;background-color: #93004a;}
+.buy-num {background: none repeat scroll 0 0 #FF0000;border-radius: 20px;color: #FFFFFF;font-size: 12px;font-weight: bold;left: 21%;position: absolute;text-align: center;width: 17px;}
+.cartItem{color: #fff;font-size: 12px;font-weight: bold;text-align: center;}
+
+#page-content{ margin-top: 56px;}
+.pageHeader,.menuTop{width:100%;height: 40px;padding:8px 0;background-color:#621A4A;}
+.pageHeader{position:fixed;z-index:999990;top:0;}
+.logo {text-align: center; margin: 0 80px;padding: 0;text-overflow:ellipsis; overflow: hidden; white-space: nowrap;color:#fff;}
+
+.logo a{font:400 21px/35px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';color:#fff;}
+.pageHeader .left{ float: left;}
+.pageHeader .right{ float: right;}
+#menuBox{box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);width: 88%;height: 100%;position: absolute; z-index:999992;top: 0;left: -100%;background-color: #FFF;}
+.bgMask{background:#000;opacity: 0.5;width:100%;height: 100%;position: absolute;top: 0;left: 0; z-index:999991;}
+.bgMask{display: none;}
+
+.searchBox{padding-left: 8px;margin-right:66px;}
+.inputKeyword{ background-color: #4a1036;padding: 6px;height: 24px;line-height: 24px;border:none;color: #956e89;font-family: 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';width: 70%;}
+@media screen and (min-width: 310px) and (max-width: 370px) {
+    .inputKeyword{font-size: 12px;}
+}
+.inputKeyword:focus{ outline: #835f7b;}
+.btnSearch{ background: url(/images/2016/icon-search.svg?v=1.0) 0 0 no-repeat;background-size: 36px 36px; width: 36px;height: 36px;border: none;}
+.btnSearch:hover{ outline: none;}
+
+.languageBox{ float: right;margin-right: 8px;}
+.languageBox i{ color: #7f6278;font-style: normal;font-size: 21px;}
+.languageBox a{font:normal 16px/36px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';font-weight: lighter; color: #FFF;}
+
+.navigation{ background-color: #FFF;}
+.navigation li{ padding: 18px 20px;border-bottom: 1px #efefef solid;}
+.navigation li a{ color: #845f70;font:normal 16px/24px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';font-weight: lighter;display: block;}
+.navigation li:hover{ background-color: #fffafe;}
+.navigation li.openItem li:hover{background-color: #efefef;}
+.navigation li a:hover{ font-weight: 600;}
+.navigation li em{ background: url(/images/2016/icons.png?v=3.0) 6px -210px no-repeat;width:19px;height:19px;margin-top:2px;float: right;overflow: hidden;position: relative;}
+.navigation li em s{font: lighter 40px/20px arial; color: #a9738b;height: 20px;width:21px ;position: absolute;right:0;display: none;}
+.navigation li ul,.navigation li.openItem,#menuBox,#menuBox .socialBox{background-color: #efefef;}
+.navigation li ul{ display: none;}
+.navigation li li{ padding-right: 0;padding-left: 34px;}
+.navigation li li li li{ padding-right: 0;padding-left:0;}
+.navigation li.openItem{ padding-bottom: 0;}
+.navigation li.openItem ul.display{ display: block;}
+.navigation li.openItem h3.current{ margin-bottom: 18px;}
+.navigation li.openItem h3.current a{ font-weight: 600;}
+.navigation li.openItem h3.current em{ background-position:-20px -210px}
+.navigation li.openItem h3.current em s{ bottom: 0;}
+.navigation li a i{margin-right: 10px;float: left;}
+.homepageIco,.storeNetworkIco,.promotionIco,.jewelriesIco,.contactIco,.memberIco,.pcIco{background: url(/images/2016/icons.png?v=3.0) -100px 0 no-repeat;width: 24px;height: 24px;display: inline-block;}
+.homepageIco{ background-position: -100px 0;}
+.storeNetworkIco{ background-position: -100px -30px;}
+.promotionIco{background-position: -100px -60px;}
+.jewelriesIco{background-position: -100px -90px;}
+.contactIco{background-position: -100px -120px;}
+.memberIco{background-position: -100px -150px;}
+.pcIco{background-position: -100px -180px;}
+#menuBox .socialBox{ padding: 20px 10%;width:80%;}
+/*header end*/
+
+.socialBox{ text-align: center;}
+
+.socialLink{width: 46px;height: 46px;display: inline-block;margin: 1px 0;background-repeat: no-repeat;background-size: 46px 46px;}
+.facebook{ background-image: url(/Images/2016/social-icon-facebook.svg);}
+.youtube{background-image: url(/Images/2016/social-icon-youtube.svg);}
+.mabelle{background-image: url(/Images/2016/social-icon-mabelle-blog.svg);}
+.pinterest{background-image: url(/Images/2016/social-icon-pinterest.svg);}
+.instagram{background-image: url(/Images/2016/social-icon-instagram.svg);}
+.weibo{background-image: url(/Images/2016/social-icon-weibo.svg);}
+.googleplus{background-image: url(/Images/2016/social-icon-google-plus.svg);display: none;}
+@media screen and (min-width: 310px) and (max-width: 370px) {
+    .socialLink{width: 38px;height: 38px;background-size: 38px 38px;}
+}
+/*footer*/
+.footer{width:100%;background-color: #611c49;overflow: hidden;}
+.spLine{border-top: 1px #e1e1e1 solid;width:98%;margin: 0 auto;}
+.payments{background:#FFF;padding:20px 10px;text-align: center;}
+.payments img{ width:98%;max-width: 355px;}
+.helpBox,.serviceBox,.socialBox{width: 95%;margin: 0 auto;}
+.helpBox{ padding: 20px 0;width:100%;overflow: hidden;text-align: center;}
+.helpBox .contactUs i,
+.helpBox .commitments i,
+.helpBox .vipPrivileges i{ width: 113px;height: 113px;display: inline-block;margin: 1px;background-size: 113px 113px;background-repeat: no-repeat;background-position: 0 0;}
+
+.CHI_helpBox .contactUs i{background-image: url(/Images/2016/btn-contact-us-tc.svg);}
+.CHI_helpBox .commitments i{background-image: url(/Images/2016/btn-6-reasons-to-shop-tc.svg);}
+.CHI_helpBox .vipPrivileges i{background-image: url(/Images/2016/btn-vip-priviteges-tc.svg);}
+
+.CHS_helpBox .contactUs i{background-image: url(/Images/2016/btn-contact-us-sc.svg);}
+.CHS_helpBox .commitments i{background-image: url(/Images/2016/btn-6-reasons-to-shop-sc.svg);}
+.CHS_helpBox .vipPrivileges i{background-image: url(/Images/2016/btn-vip-priviteges-sc.svg);}
+
+.ENG_helpBox .contactUs i{background-image: url(/Images/2016/btn-contact-us-en.svg);}
+.ENG_helpBox .commitments i{background-image: url(/Images/2016/btn-6-reasons-to-shop-en.svg);}
+.ENG_helpBox .vipPrivileges i{background-image: url(/Images/2016/btn-vip-priviteges-en.svg);}
+
+@media screen and (min-width: 310px) and (max-width: 370px) {
+    .helpBox .contactUs i,
+    .helpBox .commitments i,
+    .helpBox .vipPrivileges i{ width: 100px;height: 100px;background-size: 100px 100px;}
+}
+
+.serviceBox{ padding:10px 0;border-top: 1px #a48199 solid;text-align: center;color: #FFF;}
+.serviceBox a,.countrySelect label{color: #FFF;font: normal 14px/36px 'STHeiti','Microsoft YaHei','宋体','arial';}
+.serviceBox a:hover{ text-decoration: underline;}
+.serviceBox i{ font-family: 'Microsoft YaHei';font-weight: normal;font-style: normal;}
+.countrySelect{padding-bottom:10px;text-align: center;}
+.countrySelect select{ width: 30%;padding: 2px;color: #646464;font-size: 14px;line-height: 30px;background:#e7e7e7;}
+.countrySelect select option{background:#e7e7e7;}
+.countrySelect label,.icpInfo,.icpInfo a{color:#c7abba}
+
+.icpInfo,.slogan{ text-align: center;line-height: 36px;font-family: 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';}
+.icpInfo a{ text-decoration: none;}
+.slogan{ font-size: 21px;color: #fffcff;font-weight: lighter;padding-bottom: 8px;}
+/*footer end*/
+
+/*help*/
+.DyNamicContent{ padding:0 0 5px 0;line-height:150%;font-size: 14px;overflow: hidden;}
+.DyNamicContent article,.DyNamicContent .article{ padding: 2px 8px;}
+.help_title{margin: 0 6px;color: rgb(153, 51, 147);font:bold 14px/40px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';}
+.help_table{width:98%;margin: 0 auto; border-collapse:collapse;}
+.help_table td, .help_table th{border:1px #993393 solid;padding:6px 4px;margin:0;}
+.help_table thead td{ background:rgb(182, 120, 191);color:#FFF;}
+.help_table td, .help_table th,.itemList li,.help_ul_list li,.caption,p{font:normal 14px/21px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';}
+.itemList li,.help_ul_list li,.caption,p{ padding-left: 6px;padding-right: 6px;}
+@media screen and (min-width: 310px) and (max-width: 370px) {
+    .help_table td, .help_table th,.itemList li,.help_ul_list li,.caption,p{ font-size: 12px;line-height: 18px;}
+}
+.itemList ul{list-style-position:inside;padding-left:26px;}
+.itemList ul li{ list-style: upper-alpha; font-weight: bold;color:#595959;}
+.itemList ul li ol{list-style-position: inside;padding-left:26px;}
+.itemList ul li ol li{ list-style: decimal;font-weight: normal;}
+.help_ul_list{ padding-left: 12px;}
+
+/*Commitments page*/
+.cCommitments{width:100%;}
+.cCommitments li{padding:10px 10px 15px 115px; border-top:1px #e1e1e1 solid; min-height:100px;}
+.cCommitments li h3,.cCommitments li p,.cCommitments li .aBtnMore{font:500 14px/26px 'STHeiti', 'Microsoft YaHei', '宋体', 'arial';}
+.cCommitments li h3{color:#8b266c;font-weight:bold; font-size:18px; margin:0;padding:0;}
+.cCommitments li p{color:#656565;margin:0;padding:8px 0;}
+.cCommitments li .aBtnMore{ background:#752155;color:#FFF; line-height:30px;text-decoration:none; padding:0 10px; display:inline-block; border-radius:1px;}
+.cCommitments li .aBtnMore em{width:0;height:0; font-size:0; border:5px #752155 solid; border-left-color:#FFF;display: inline-block; margin-left:8px;}
+.cCommitments li i{ margin-left:-108px; float:left;}
+.cProductCareIco,.cMemberDiscountIco,.cEasySecureIco,.cUniqueCollectionIco,.cFreeDeliveryIco,.cPriceGuaranteeIco{display:inline-block; background:url(/images/2016/commitments.png) 0 0 no-repeat; width:100px; height:100px;}
+.cPriceGuaranteeIco{ background-position:0 0;}
+.cFreeDeliveryIco{ background-position:0 -105px;}
+.cUniqueCollectionIco{ background-position:0 -210px;}
+.cEasySecureIco{ background-position:0 -315px;}
+.cMemberDiscountIco{ background-position:0 -420px;}
+.cProductCareIco{ background-position:0 -530px;}
