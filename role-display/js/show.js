@@ -20,7 +20,7 @@ function loadMemberInfo( mid ){
 				$('#member-slogan').text( "加入會員！" );
 				$("#member-img")[0].src = "../roleChange/BecomeMember.gif";
 				
-				$('#member-btn')[0].href = '../register/_%20MaBelle.com.html';
+				$('#member-btn')[0].href = '../register/_MaBelle.com.html';
 				return;
 			}
 			
